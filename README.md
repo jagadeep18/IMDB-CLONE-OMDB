@@ -76,17 +76,23 @@ The app uses the **OMDB API** to fetch movie data. You will need to replace the 
 ## Folder Structure
 
 ```
-/src
-  /components
-    /pages
-      - Home.jsx
-      - MoviePage.jsx
-      - Favorites.jsx
-  App.jsx
-  index.jsx
-  index.css
-  App.css
-  package.json
+my-project/
+│
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx
+│   │
+│   ├── context/
+│   │   └── FavoritesContext.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── MovieDetail.jsx
+│   │   └── Favorites.jsx
+│   │
+│   └── App.jsx
+│
+└── package.json
 ```
 
 - `index.jsx`: The entry point for the React app.
