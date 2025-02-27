@@ -1,40 +1,99 @@
-<<<<<<< HEAD
-# IMDB-CLONE---OMDB
-=======
-## React
+# 🎬 IMDB CLONE OMDB
 
-This is a simple React application. This application serves as a basic template for a react applications.  
-This project is bootstrapped with [Vite](https://vitejs.dev/guide/).
-
-## How to run
-
-1. Before running the application, make sure all dependencies are installed. To install dependencies, run following command in terminal:
-   ```sh
-   npm install
-   ```
-
-2. Once dependencies are installed, run the following command to start the application:
-   ```sh
-   npm run dev
-   ```
-
-3. Refresh the URL in simple browser to see the output. As shown below 
-   ![](https://static.onecompiler.com/images/posts/3zzkbysj7/studio-react-vite-reload.png)
+This is a React-based movie search application that allows users to search for movies, view detailed movie information, and save their favorite movies. It utilizes the OMDB API to fetch movie data and provides an intuitive, user-friendly interface for exploring movies.
 
 
-## FAQs & Debugging
 
- ### 1. I do not see browser in my workspace
- Studio will automatically open the app in a new browser tab. If not, you can use the following steps to open the simple browser 
 
-1. From VS Code command pallette(`Ctrl/Cmd + Shift + P`), run **Studio Manager: SimpleBrowser Default URL** command. This will open the app in a new browser tab.
+## Features
 
-2. Your app runs on hosted env which can be accessed using host id, port provided in file **.vsocde/.studio/studio-env.json**. Use values to create the URL as follows:
-   `https://<STUDIO_HOST_ID>-3000.ocws.app`
+- **Search Movies**: Users can search for movies by title.
+- **View Movie Details**: Click on a movie to view detailed information such as the year of release, poster, and more.
+- **Favorite Movies**: Users can save their favorite movies in the local storage for later viewing.
+- **Responsive Design**: The application is mobile-friendly, providing a smooth user experience across all devices.
 
- ### 2. Getting `vite: not found` error
- This means node_modules are missing in your workspace, please refer the 'How to run' section and make sure you have followed the steps in sequence
 
- ### 3. Can I use create-react-app instead Vite?
- Yes, you can use create-react-app instead Vite, the default workspace is loaded with Vite setup, you can remove the Vite dependencies, add create-react-app dependencies and update the scripts to start using create-react-app.
->>>>>>> fdd11e0 (Initial commit for new repository)
+
+
+
+## Technologies Used
+
+- **React.js**: JavaScript library for building user interfaces.
+- **React Router**: For routing and navigation between pages.
+- **Bootstrap**: For responsive design and UI components.
+- **Axios**: For making API requests.
+- **OMDB API**: Public API to fetch movie data.
+- **Local Storage**: For saving and retrieving favorite movies.
+
+
+
+
+
+## App Structure
+
+### Pages
+
+1. **Home Page** (`/`): 
+   - Users can search for movies by typing into the search bar.
+   - The app fetches movie data from the OMDB API based on the search query.
+   - Movies are displayed in a grid format with movie posters, titles, and release years.
+   - Users can click on a movie card to view detailed information on the Movie Page.
+
+2. **Movie Details Page** (`/movie/:id`):
+   - Displays detailed information for a selected movie, including title, plot, year, and poster.
+   - Users can add the movie to their favorites from this page.
+
+3. **Favorites Page** (`/favorites`):
+   - Displays a list of the user's favorite movies stored in the local storage.
+   - Users can remove movies from their favorites list.
+
+
+
+
+
+### Functionalities
+
+- **Search Functionality**:
+  - As the user types in the search bar, the app automatically fetches movie data from the OMDB API and updates the movie list.
+  - Results are paginated, and users can click a "Load More" button to load more results.
+  
+- **Favorite Movies**:
+  - Users can add movies to their favorites by clicking a button on the movie detail page.
+  - Favorite movies are stored in the browser's local storage and can be viewed on the "Favorites" page.
+  - Users can remove movies from their favorites on the "Favorites" page.
+
+
+
+
+
+## API Key
+
+The app uses the **OMDB API** to fetch movie data. You will need to replace the API key (`a06aaba2`) in the `fetchMovies` function with your own OMDB API key. To get an API key, you can sign up on the [OMDB website](http://www.omdbapi.com/apikey.aspx).
+
+
+
+
+## Folder Structure
+
+```
+/src
+  /components
+    /pages
+      - Home.jsx
+      - MoviePage.jsx
+      - Favorites.jsx
+  App.jsx
+  index.jsx
+  index.css
+  App.css
+  package.json
+```
+
+- `index.jsx`: The entry point for the React app.
+- `App.jsx`: The main component, including routes and layout.
+- `Home.jsx`: The search page where users can search and view movies.
+- `MoviePage.jsx`: The page showing detailed information about a selected movie.
+- `Favorites.jsx`: The page displaying the user's favorite movies.
+- `index.css`: Global styling for the app, including dark cinematic theme and custom styles.
+- `App.css`: Additional styling, including animations and component-specific styles.
+
